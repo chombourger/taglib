@@ -89,6 +89,15 @@ ASF::Tag::comment() const
 }
 
 String
+ASF::Tag::composer() const
+{
+
+  if(d->attributeListMap.contains("WM/Composer"))
+    return d->attributeListMap["WM/Composer"][0].toString();
+  return String::null;
+}
+
+String
 ASF::Tag::rating() const
 {
   return d->rating;
@@ -147,6 +156,12 @@ void
 ASF::Tag::setComment(const String &value)
 {
   d->comment = value;
+}
+
+void
+ASF::Tag::setComposer(const String &value)
+{
+  setAttribute("WM/Composer", value);
 }
 
 void

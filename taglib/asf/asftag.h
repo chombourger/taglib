@@ -71,6 +71,11 @@ namespace TagLib {
       virtual String comment() const;
 
       /*!
+       * Returns the track composer.
+       */
+      virtual String composer() const;
+
+      /*!
        * Returns the genre name; if no genre is present in the tag String::null
        * will be returned.
        */
@@ -118,6 +123,11 @@ namespace TagLib {
        * Sets the comment to \a s.
        */
       virtual void setComment(const String &s);
+
+      /*!
+       * Sets the composer to \a s.
+       */
+      virtual void setComposer(const String &s);
 
       /*!
        * Sets the rating to \a s. 
